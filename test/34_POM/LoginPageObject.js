@@ -3,23 +3,30 @@ class LoginPageObject{
         loginbtn : "#login2",
         username : "#loginusername",
         password:"#loginpassword",
-        login : "button[onclick='logIn()']"
+        login: "button[onclick='logIn()']"
     };
 
-    async navigateToLoginLocator()
+    navigateToLoginLocator(page)
     {
-        return this.weblocators.loginbtn;
+        return  page.locator(this.weblocators.loginbtn);
     }
 
-    async getUserNameLocator()
+    getUserNameLocator(page)
     {
-        return this.weblocators.username;
+        return page.locator(this.weblocators.username);
     }
 
-    async getUserPasswordLocator()
+    getUserPasswordLocator(page)
     {
-        return this.weblocators.password;
+        return  page.locator(this.weblocators.password);
     }
+
+    getLoginButtonLocator(page)
+    {
+        return  page.locator(this.weblocators.login);
+    }
+
+
 }
 
 export default LoginPageObject;
